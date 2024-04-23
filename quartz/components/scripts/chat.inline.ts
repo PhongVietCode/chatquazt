@@ -25,15 +25,17 @@ document.addEventListener("nav", () => {
 
   const sendBtn = document.querySelector(".footer-btn") as HTMLElement
   const userinp = document.querySelector(".footer-input") as HTMLInputElement
-  sendBtn.addEventListener("click", () => {
-    if (userinp.value) createMsg(userinp.value, "user-msg", body)
-    createMsg(userinp.value, "bot-msg", body)
-  })
+  //   sendBtn.addEventListener("click", () => {
+  //     if (userinp.value) createMsg(userinp.value, "user-msg", body)
+  //     createMsg(userinp.value, "bot-msg", body)
+  //   })
   userinp.addEventListener("keydown", (e) => {
     if (e.key == "Enter") {
+      if (userinp.value) {
         createMsg(userinp.value, "user-msg", body)
         createMsg(userinp.value, "bot-msg", body)
         userinp.value = ""
+      }
     }
   })
 
