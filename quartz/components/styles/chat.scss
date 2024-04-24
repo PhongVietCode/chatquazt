@@ -42,14 +42,10 @@
     }
   }
   & > .body {
-    max-height: 600px;
     height: 100%;
-    width: 100%;
+    overflow-y: scroll;
     display: flex;
-    justify-content: flex-end;
     flex-direction: column;
-    box-sizing: border-box;
-    overflow-y: scroll !important;
     & > .msg {
       max-width: 50%;
       padding: 0.5rem 0.9rem;
@@ -57,11 +53,12 @@
       border-radius: 1rem;
       margin: 0.5rem 0.2em;
       word-wrap: break-word;
+      position: relative;
     }
     & > .bot-msg {
       align-self: flex-start;
-      position: relative;
       margin-left: 2.1rem;
+      bottom: 0;
     }
     & > .bot-msg::before {
       content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='0.9em' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23edf6f9' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M12 8V4H8'/%3E%3Crect width='16' height='12' x='4' y='8' rx='2'/%3E%3Cpath d='M2 14h2m16 0h2m-7-1v2m-6-2v2'/%3E%3C/g%3E%3C/svg%3E");
@@ -75,7 +72,6 @@
     }
     & > .user-msg {
       align-self: flex-end;
-      position: relative;
       margin-right: 0.4rem;
     }
   }
@@ -96,7 +92,7 @@
       flex: 1;
       & > .footer-input {
         width: 96%;
-        padding:  0 0 0 0.7rem;
+        padding: 0 0 0 0.7rem;
         background-color: var(--sea-salt);
         border: none;
         border-radius: 1.4rem;

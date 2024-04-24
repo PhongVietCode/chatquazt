@@ -34,6 +34,7 @@ document.addEventListener("nav", () => {
       if (userinp.value) {
         createMsg(userinp.value, "user-msg", body)
         createMsg(userinp.value, "bot-msg", body)
+        body.scrollTop = body.scrollHeight
         userinp.value = ""
       }
     }
